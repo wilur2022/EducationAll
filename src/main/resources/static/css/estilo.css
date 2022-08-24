@@ -1,0 +1,54 @@
+html,body {
+    height:100%;
+    text-align: center;
+    
+}
+
+header {
+    width: 100%;    
+    display:block;
+    border: 5px solid rgb(0, 55, 255);
+    background:#6d8dd6;
+    padding:5px 0px;
+    max-height: max-content;
+
+}
+
+
+
+section {
+    width: 100%;
+    background: rgb(239, 239, 220);
+    border: 5px solid rgb(70, 243, 243);
+    float: center;
+    overflow: auto;
+    text-align: center;
+   
+}
+
+aside {
+    width: 100%;
+    background: rgb(239, 239, 220);
+    border: 5px solid rgb(0, 55, 255);
+    float: center;
+    overflow: auto;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    align-tracks: center;
+    align-self: center;
+    /*Si quisieramos ocultar el contenido relacionado pondriamos visibility a hidden*/
+    /*visibility: hidden;*/
+}
+footer {
+    position: relative;
+    margin-top: -1px;
+    height: 70px; 
+    clear: both;
+    background: #286af0;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+figure {
+    display: table; margin: 1 auto;
+}
