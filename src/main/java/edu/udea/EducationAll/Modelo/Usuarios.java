@@ -10,6 +10,11 @@ public class Usuarios {
         this.usuario = usuario;
         this.password = password;
     }
+    //Creamos un constructor sin parametros
+    public Usuarios() {
+    }
+
+
     //Getters and setters
 
     public String getUsuario() {

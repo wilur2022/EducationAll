@@ -4,9 +4,7 @@ import edu.udea.EducationAll.Modelo.Usuarios;
 import edu.udea.EducationAll.bussinesLogic.UsersRegister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 //Creamos controlador UsuarioRegistrado
@@ -27,6 +25,25 @@ public class UsuarioControllers {
         return new ResponseEntity<>(gestorUsuarioXXX.GestorUsuario(), HttpStatus.ACCEPTED);
     }
 
+    //Creamos una consulta por medio de una URL usando un QUERY PARAMS
+    //En internet debe escribirse localhost:8080/OnlyUser?id=1001
+    @GetMapping("/OnlyUser")
+    public ResponseEntity<String> getUsuarioXXX(@RequestParam String id){
+        return new ResponseEntity<>(id, HttpStatus.OK);
+    }
+
+    //Creamos una consulta por medio de un PATH PARAMS
+    //En internet debe escribirse localhost:8080/1001/edit. ESE edit ES OPCIONAL
+    @GetMapping("/OnlyUser/{password}/edit")
+    public ResponseEntity<Object> getUsuarioXXXPath(@PathVariable String password){
+        try {
+            Usuarios UserX = gestorUsuarioXXX.getOnlyUsuario(password);
+            return new ResponseEntity<>(UserX, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+    }
 
 }
 
